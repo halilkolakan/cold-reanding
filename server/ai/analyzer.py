@@ -13,7 +13,7 @@ def analyze_video(video_path):
         raise ValueError(f"Video açılamadı: {video_path}")
 
     fps = capture.get(cv2.CAP_PROP_FPS)
-    frame_interval = max(1, round(fps)) if fps > 0 else 1
+    frame_interval = max(1, round(fps / 4)) if fps > 0 else 1
     frame_index = 0
     analyzed_frames = 0
     emotion_counts = {}
